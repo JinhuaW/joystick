@@ -27,7 +27,12 @@ public class Joystick extends SurfaceView implements Callback {
     private Canvas canvas;
     private Paint mPaint;
     private int RockerCircleX,RockerCircleY,RockerCircleR,SmallRockerCircleX,SmallRockerCircleY,SmallRockerCircleR;
-    private int speed,Angle;
+    private int speed = 0, Angle, dir = 0;
+    /*
+          0
+        3   1 //dir
+          2
+     */
     Bitmap bitmap,bitmap2;
     Display display;
     Point size;
@@ -61,11 +66,12 @@ public class Joystick extends SurfaceView implements Callback {
         bitmap = Bitmap.createScaledBitmap(bitmap, RockerCircleR*2, RockerCircleR*2, false);
         bitmap2 = BitmapFactory.decodeResource(getResources(), R.drawable.rocker_point);
         bitmap2 = Bitmap.createScaledBitmap(bitmap2, SmallRockerCircleR*2, SmallRockerCircleR*2, false);
+
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        int len, x, y, action;
+        int len, x, y, action, new_speed = -1, new_dir = -1;
         action = event.getAction();
         try {
             if (MotionEvent.ACTION_DOWN == action || MotionEvent.ACTION_MOVE == action) {
@@ -83,13 +89,13 @@ public class Joystick extends SurfaceView implements Callback {
                     SmallRockerCircleX = point.x;
                     SmallRockerCircleY = point.y;
                 }
-                speed = len * 6 / RockerCircleR;
-                if (speed > 7)
-                    speed = 7;
+                new_speed = len * 3 / RockerCircleR;
+                if (new_speed > 4)
+                    new_speed = 4;
                 Angle = (getAngle(RockerCircleX, RockerCircleY, x, y) + 360) % 360;
-
+                new_dir = get_dir(Angle);
             } else if (MotionEvent.ACTION_UP == action) {
-                speed=0; Angle=0;
+                new_speed=0; new_dir = 0;
                 SmallRockerCircleX = RockerCircleX;
                 SmallRockerCircleY = RockerCircleY;
             }
@@ -98,11 +104,24 @@ public class Joystick extends SurfaceView implements Callback {
         } catch (Exception e){
 
         }
-        listener.onSteeringWheelChanged(speed, Angle);
+
+        if (new_speed >= 0 && new_dir >=0) {
+            if (new_speed != speed || (new_speed == speed && new_speed != 0 && new_dir != dir)) {
+                listener.onSteeringWheelChanged(new_speed, new_dir);
+                speed = new_speed;
+                dir = new_dir;
+            }
+        }
 
         return true;
     }
 
+    private int get_dir(int angle) {
+        if (angle >= 315 || angle <45)
+            return 0;
+        else
+            return (int) (angle-45)/90 +1;
+    }
 
     private static int getAngle (float px1, float py1, float px2, float py2) {
         float lenA = py1 - py2;
@@ -159,7 +178,7 @@ public class Joystick extends SurfaceView implements Callback {
 
     private SingleRudderListener listener = null;
     public interface SingleRudderListener {
-        void onSteeringWheelChanged(int speed, int angle);//具体的方法
+        void onSteeringWheelChanged(int speed, int dir);//具体的方法
     }
     public void setSingleRudderListener(SingleRudderListener rockerListener) {
         listener = rockerListener;

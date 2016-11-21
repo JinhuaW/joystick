@@ -70,7 +70,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="69b8e70b82eaf9aa1d1373d14175c1772a31194a">
+        sha1="c0f13001231c68b6afcaff3098f94b96573ac856">
         <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ee1f4637adba7a9afc41201bb5e4d5131c1d9d35/classes.dex" />
     </item>
     <item
@@ -142,7 +142,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="2cb84fd6163b9f9e451352373d8681c47ed9bb7b">
+        sha1="6f3aa253e953a38eed4cb478409f9e503d330681">
         <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_749c40c21f1f0ed4e213d07dc2f01266fbd43dde/classes.dex" />
     </item>
     <item

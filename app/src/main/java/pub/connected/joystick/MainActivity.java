@@ -2,20 +2,37 @@ package pub.connected.joystick;
 
 import android.graphics.Point;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Display;
+import android.view.KeyEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+
+public class MainActivity extends AppCompatActivity implements Runnable {
     private Joystick mSurfaceView;
     private TextView tv1;
-    private View mContentView;
+    private static boolean isExit = false;
 
+    private BufferedWriter writer = null;
+   // private BufferedReader reader = null;
+    private Socket socket=null;
+    private Button btn_a,btn_b;
+    private String server_ip;
+    private int server_port, conn_time_out;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,13 +43,7 @@ public class MainActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
-        mContentView = findViewById(R.id.activity_main);
-        mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
-                | View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         mSurfaceView = (Joystick) findViewById(R.id.rudder);		//摇杆
         Display display = getWindowManager().getDefaultDisplay();	//取得萤幕大小
         Point size = new Point();									//
@@ -40,7 +51,11 @@ public class MainActivity extends AppCompatActivity {
         mSurfaceView.getHolder().setFixedSize(size.y, size.y);	//设定摇杆操作区的大小
         SurfaceHolder holder=mSurfaceView.getHolder();
         tv1=(TextView) findViewById(R.id.txt1);
-        tv1.setText("角度= "+ 0 +"		速度= "+ 0);
+        tv1.setText("方向= "+ 0 +"		速度= "+ 0);
+        btn_a = (Button) findViewById(R.id.button_A);
+        btn_a.setOnClickListener(clickListener);
+        btn_b = (Button) findViewById(R.id.button_B);
+        btn_b.setOnClickListener(clickListener);
         holder.addCallback(
                 new Callback(){
                     public void surfaceDestroyed(SurfaceHolder holder){}
@@ -51,12 +66,101 @@ public class MainActivity extends AppCompatActivity {
         );
         mSurfaceView.setSingleRudderListener(
                 new Joystick.SingleRudderListener() {
-                    public void onSteeringWheelChanged(int speed, int angle)
-                    {//具体实现
-                        tv1.setText("角度= "+ angle +"		速度= "+ speed);
+                    public void onSteeringWheelChanged(int speed, int dir)
+                    {
+                        if (socket.isConnected()) {
+                            try {
+                                writer.write("r: " + dir +" "+ speed+"\n");
+                                writer.flush();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        tv1.setText("方向= "+ dir +"		速度= "+ speed);
                     }
                 }
         );
-
+        server_ip = getResources().getString(R.string.server_ip);
+        server_port = getResources().getInteger(R.integer.server_port);
+        conn_time_out = getResources().getInteger(R.integer.conn_time_out);
+        new Thread(MainActivity.this).start();
     }
+
+    Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            isExit = false;
+        }
+    };
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exit();
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private void exit() {
+        if (!isExit) {
+            isExit = true;
+            Toast.makeText(getApplicationContext(), "再按一次退出程序",
+                    Toast.LENGTH_SHORT).show();
+            // 利用handler延迟发送更改状态信息
+            mHandler.sendEmptyMessageDelayed(0, 1000);
+        } else {
+            finish();
+            System.exit(0);
+        }
+    }
+
+
+    public void run(){
+        socket = new Socket();
+        try {
+            socket.connect(new InetSocketAddress(server_ip, server_port), conn_time_out);
+            writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        try {
+            socket.close();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Button.OnClickListener clickListener=new Button.OnClickListener(){
+        public void onClick(View v){
+            switch(v.getId()){
+                case R.id.button_A:		//重力感应
+                    if (socket.isConnected()) {
+                        try {
+                            writer.write("b: a\n");
+                            writer.flush();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    break;
+                case R.id.button_B:
+                    if (socket.isConnected()) {
+                        try {
+                            writer.write("b: b\n");
+                            writer.flush();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    break;
+            }
+        }
+    };
 }
