@@ -34,8 +34,8 @@
         android:layout_marginRight="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="18dp"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:textStyle="normal|bold"
         android:textColor="@android:color/white" />
 
@@ -49,8 +49,8 @@
         android:layout_alignRight="@+id/button_B"
         android:layout_alignEnd="@+id/button_B"
         android:layout_marginBottom="16dp"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:textStyle="normal|bold"
         android:textColor="@android:color/white" />
 
