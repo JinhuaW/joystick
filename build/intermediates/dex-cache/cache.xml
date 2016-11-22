@@ -3,6 +3,15 @@
 
     <item
         is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_c66fe3440c7b4e7c2565125152a677bcdd9ba3de/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/jinhuawu/Android/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
         jumboMode="true"
         optimize="true"
@@ -12,6 +21,7 @@
     </item>
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -27,6 +37,14 @@
         revision="25.0.0"
         sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
         <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_965f75eec6c78a60d0208bbeb47257ac2dcf3158/classes.dex" />
+=======
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.1_8a82ed47426e8b5e47decd4386aadd91be3c6b7f/classes.dex" />
+>>>>>>> 22658151e25a7ec89df926b0515dac81d412e968
     </item>
     <item
         is-multidex="true"
@@ -39,7 +57,29 @@
     </item>
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
+=======
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_5a115fb504e91b23864a585ef9d0677b236b46fe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cd97c9a026acde37a74dd381bff0a37ce7e09f51">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_4d4bfdad68abacfe992146764e7c3b0c867e4868/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+>>>>>>> 22658151e25a7ec89df926b0515dac81d412e968
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
@@ -48,7 +88,20 @@
     </item>
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+=======
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.1_6e19d37d80e8ec1092aaac86dab8559dfcdb43c7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+>>>>>>> 22658151e25a7ec89df926b0515dac81d412e968
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
@@ -57,7 +110,29 @@
     </item>
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+=======
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_b4cdf40359d4aca103de9422ebcba2a1ae0b6cba/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_b65c3f3b392d1bb11ad571270f6857702a395aac/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+>>>>>>> 22658151e25a7ec89df926b0515dac81d412e968
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
@@ -84,7 +159,20 @@
     </item>
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
+=======
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.1_388ffc08d34be05abebeacacefb739951bb2ad30/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+>>>>>>> 22658151e25a7ec89df926b0515dac81d412e968
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
@@ -102,7 +190,29 @@
     </item>
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+=======
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.1_903439f465f90fa0a3e2b6b8ebb22467fd1196e6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.1_5f599b407c39d5cfb41c249d4ac53aa5503faaaf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+>>>>>>> 22658151e25a7ec89df926b0515dac81d412e968
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
@@ -120,7 +230,20 @@
     </item>
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
+=======
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_e7c4bc87182f6994ac279bfb45cdfe78c81f1b21/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
+>>>>>>> 22658151e25a7ec89df926b0515dac81d412e968
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
@@ -165,7 +288,38 @@
     </item>
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+=======
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.1_76b6f0499880a5f247701eefd7145946c859fc19/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.1_ae3b6f26bc707053479f10418ae512cc1d95f812/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b2b6c339274c346d3662ad2be22bc443da75d85b">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_720011ea6c38850063f36ee137defeae3a70c956/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+>>>>>>> 22658151e25a7ec89df926b0515dac81d412e968
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
@@ -180,6 +334,24 @@
         revision="25.0.0"
         sha1="f83b00041ecfba705603fec40363416c7de69719">
         <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick2/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_398ff3c87b9aba0de8a402fb81e34025d45d1ea1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.1_ad9247595adebbd24c1120bf945fb5df6222f01c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/home/jinhuawu/AndroidStudioProjects/Joystick/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_4d630812249721a7724b23ad2c2c876298de038a/classes.dex" />
     </item>
 
 </items>
