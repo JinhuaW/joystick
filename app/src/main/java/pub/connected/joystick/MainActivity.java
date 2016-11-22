@@ -1,5 +1,6 @@
 package pub.connected.joystick;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
@@ -30,9 +31,8 @@ public class MainActivity extends AppCompatActivity implements Runnable {
     private BufferedWriter writer = null;
    // private BufferedReader reader = null;
     private Socket socket=null;
-    private Button btn_a,btn_b;
-    private String server_ip;
-    private int server_port, conn_time_out;
+    private Button btn_a,btn_b, btn_setting;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements Runnable {
         btn_a.setOnClickListener(clickListener);
         btn_b = (Button) findViewById(R.id.button_B);
         btn_b.setOnClickListener(clickListener);
+        btn_setting = (Button) findViewById(R.id.button_Setting);
+        btn_setting.setOnClickListener(clickListener);
         holder.addCallback(
                 new Callback(){
                     public void surfaceDestroyed(SurfaceHolder holder){}
@@ -80,9 +82,6 @@ public class MainActivity extends AppCompatActivity implements Runnable {
                     }
                 }
         );
-        server_ip = getResources().getString(R.string.server_ip);
-        server_port = getResources().getInteger(R.integer.server_port);
-        conn_time_out = getResources().getInteger(R.integer.conn_time_out);
         new Thread(MainActivity.this).start();
     }
 
@@ -120,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements Runnable {
     public void run(){
         socket = new Socket();
         try {
-            socket.connect(new InetSocketAddress(server_ip, server_port), conn_time_out);
+            socket.connect(new InetSocketAddress("192.168.1.8", 9999), 4000);
             writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         } catch(IOException e) {
             e.printStackTrace();
@@ -160,6 +159,10 @@ public class MainActivity extends AppCompatActivity implements Runnable {
                         }
                     }
                     break;
+                case R.id.button_Setting:
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, SettingActivity.class);
+                    MainActivity.this.startActivity(intent);
             }
         }
     };

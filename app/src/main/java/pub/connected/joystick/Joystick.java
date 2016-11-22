@@ -50,7 +50,9 @@ public class Joystick extends SurfaceView implements Callback {
         SmallRockerCircleX=RockerCircleX=size.y/3;
         SmallRockerCircleY=RockerCircleY=size.y*2/3;
         /*th = new Thread(this);*/
-
+        if (isInEditMode()) {
+            return;
+        }
         sfh = this.getHolder();
         sfh.addCallback(this);
         sfh.setFormat(PixelFormat.TRANSLUCENT);
