@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity implements Runnable {
     private TextView tv1;
     private static boolean isExit = false;
 
-    private BufferedWriter writer = null;
+    public static BufferedWriter writer = null;
    // private BufferedReader reader = null;
-    private Socket socket=null;
+    public static Socket socket=null;
     private Button btn_a,btn_b, btn_setting;
 
     @Override
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements Runnable {
     public void run(){
         socket = new Socket();
         try {
-            socket.connect(new InetSocketAddress("192.168.1.8", 9999), 4000);
+            socket.connect(new InetSocketAddress(getResources().getString(R.string.server_ip), getResources().getInteger(R.integer.server_port)), getResources().getInteger(R.integer.conn_time_out));
             writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         } catch(IOException e) {
             e.printStackTrace();

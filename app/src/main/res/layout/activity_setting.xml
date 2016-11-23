@@ -45,7 +45,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="11dp"
-        android:id="@+id/editText"
+        android:id="@+id/txt_port"
         android:textAlignment="center"
         android:textStyle="normal|bold"
         android:textColorLink="?android:attr/colorPrimary" />
@@ -56,9 +56,9 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText"
-        android:id="@+id/editText2"
+        android:layout_alignRight="@+id/txt_port"
+        android:layout_alignEnd="@+id/txt_port"
+        android:id="@+id/txt_ip"
         android:textAlignment="center"
         android:textStyle="normal|bold"
         android:textColorLink="?android:attr/colorPrimary" />
@@ -67,11 +67,11 @@
         android:text="设置服务器"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/txt_port"
         android:layout_marginTop="52dp"
-        android:id="@+id/button"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText"
+        android:id="@+id/button_save"
+        android:layout_alignRight="@+id/txt_port"
+        android:layout_alignEnd="@+id/txt_port"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2" />
 
@@ -80,9 +80,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button"
-        android:id="@+id/button2"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button" />
+        android:layout_alignLeft="@+id/button_save"
+        android:layout_alignStart="@+id/button_save"
+        android:id="@+id/button_conn"
+        android:layout_alignRight="@+id/button_save"
+        android:layout_alignEnd="@+id/button_save" />
 </RelativeLayout>

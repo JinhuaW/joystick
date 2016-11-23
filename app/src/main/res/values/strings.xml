@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Joystick</string>
-    <string name="server_ip">192.168.173.11</string>
-    <integer name="server_port">9998</integer>
-    <integer name="conn_time_out">4000</integer>
+    <string name="server_ip">192.168.11.2</string>
+    <integer name="server_port">9999</integer>
+    <integer name="conn_time_out">1000</integer>
     <string name="title_activity_settings">Settings</string>
 </resources>
