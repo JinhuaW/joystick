@@ -14,6 +14,7 @@ import android.view.SurfaceHolder.Callback;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements Runnable {
     private Joystick mSurfaceView;
@@ -32,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements Runnable {
    // private BufferedReader reader = null;
     public static Socket socket=null;
     private Button btn_a,btn_b, btn_setting;
-
+    private PreferencesService service;
+    private ImageView status;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements Runnable {
         SurfaceHolder holder=mSurfaceView.getHolder();
         tv1=(TextView) findViewById(R.id.txt1);
         tv1.setText("方向= "+ 0 +"		速度= "+ 0);
+        status = (ImageView) findViewById(R.id.image_status);
+
         btn_a = (Button) findViewById(R.id.button_A);
         btn_a.setOnClickListener(clickListener);
         btn_b = (Button) findViewById(R.id.button_B);
@@ -89,7 +94,18 @@ public class MainActivity extends AppCompatActivity implements Runnable {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            isExit = false;
+            switch (msg.what) {
+                case 0:
+                    isExit = false;
+                    break;
+                case 1:
+                    if (socket.isConnected()){
+                        status.setImageResource(android.R.drawable.presence_online);
+                    } else {
+                        status.setImageResource(android.R.drawable.presence_busy);
+                    }
+                    break;
+            }
         }
     };
 
@@ -117,12 +133,28 @@ public class MainActivity extends AppCompatActivity implements Runnable {
 
 
     public void run(){
+        service = new PreferencesService(this);
+        Map<String, String> params = service.getPerferences();
+        String server_ip = params.get("ip");
+        int server_port = Integer.parseInt(params.get("port"));
         socket = new Socket();
         try {
-            socket.connect(new InetSocketAddress(getResources().getString(R.string.server_ip), getResources().getInteger(R.integer.server_port)), getResources().getInteger(R.integer.conn_time_out));
-            writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            if (!server_ip.isEmpty() && server_port !=0) {
+                socket.connect(new InetSocketAddress(server_ip, server_port), getResources().getInteger(R.integer.conn_time_out));
+                writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            }
         } catch(IOException e) {
             e.printStackTrace();
+        }
+
+        while (true) {
+
+            mHandler.sendEmptyMessage(1);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
     @Override
